@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハマリバ｜あなたが「ハマる」仕事へ。20代の適職診断（無料）</title>
+<meta name="description" content="学歴も職歴も、関係ない。『このままで終わりたくない』20代へ。3分の適職診断で、向いてる仕事がわかる。求職者は完全無料。">
+<!-- 差し替え：https://lin.ee/zId5HBI（全CTA）／#PRIVACY_URL（フッター）／ヒーロー画像は任意でブランド写真に -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241048;        /* 深い紫＝主役のインク */
+  --purple:#5B2E91;
+  --yellow:#FFD23D;     /* 主役の黄 */
+  --paper:#FBF6EC;      /* 紙の地 */
+  --line:#E6DCC9;
+  --muted:#6F6685;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.disp{font-family:'Dela Gothic One',sans-serif;font-weight:400;line-height:1.34;letter-spacing:.01em}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 22px}
+.tight{max-width:760px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* 署名：「ハマる」が黄の受け皿にハマる */
+.fit{display:inline-block;background:var(--yellow);color:var(--ink);padding:.02em .28em;border-radius:.18em;box-shadow:6px 6px 0 rgba(36,16,72,.22);transform:rotate(-1.5deg)}
+
+/* CTA：黄の塊＋ハードシャドウ */
+.btn{display:inline-flex;align-items:center;gap:.6em;background:var(--yellow);color:var(--ink);font-family:'Dela Gothic One',sans-serif;font-size:1.02rem;padding:18px 30px;border-radius:14px;box-shadow:5px 5px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn .free{font-family:'Noto Sans JP';font-weight:700;font-size:.72rem;background:var(--ink);color:var(--yellow);padding:3px 9px;border-radius:99px}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px}
+
+section{padding:84px 0;position:relative}
+.eyebrow{font-family:'Dela Gothic One';font-size:.74rem;letter-spacing:.18em;color:var(--purple);margin-bottom:14px}
+.h2{font-size:clamp(1.6rem,6vw,2.4rem)}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--ink);color:var(--paper);padding:26px 0 80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg picture{display:contents}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(36,16,72,.95) 0%,rgba(36,16,72,.88) 45%,rgba(36,16,72,.72) 100%)}
+.hero .wrap{position:relative;z-index:2}
+@media(max-width:760px){
+  .hero-shade{background:linear-gradient(180deg,rgba(36,16,72,.93) 0%,rgba(36,16,72,.66) 40%,rgba(36,16,72,.82) 100%)}
+  .hero-bg img{object-position:center top}
+  .hero{padding-bottom:64px}
+}
+.hero .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:54px}
+.hero .logo{font-family:'Dela Gothic One';font-size:1.15rem;letter-spacing:.06em;display:flex;align-items:center;gap:.4em}
+.hero .logo .b{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--yellow);color:var(--ink);border-radius:8px;font-size:.82rem;transform:rotate(-4deg)}
+.hero .navbtn{font-family:'Dela Gothic One';font-size:.78rem;background:var(--yellow);color:var(--ink);padding:9px 16px;border-radius:10px}
+.hero h1{font-size:clamp(2rem,9vw,3.7rem);margin-bottom:24px}
+.hero h1 .sm{display:block;font-size:.46em;color:var(--yellow);margin-bottom:.5em;letter-spacing:.02em}
+.hero .lead{font-size:clamp(.98rem,3.6vw,1.12rem);max-width:30em;margin-bottom:30px;color:rgba(251,246,236,.86)}
+.hero .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-family:'Dela Gothic One';font-size:.78rem}
+.hero .row span{border:2px solid rgba(255,210,61,.5);color:var(--yellow);padding:7px 14px;border-radius:99px}
+.hero .ctarow{margin:34px 0 0}
+
+/* ---------- 共感 ---------- */
+.empathy{background:var(--paper)}
+.worries{border-top:3px solid var(--ink);margin:30px 0 44px}
+.worry{display:flex;gap:18px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line)}
+.worry .no{font-family:'Dela Gothic One';color:var(--yellow);-webkit-text-stroke:1.4px var(--purple);font-size:1.5rem;flex:0 0 1.6em}
+.worry .tx b{font-family:'Dela Gothic One';font-weight:400;font-size:1.06rem;display:block;margin-bottom:2px}
+.worry .tx p{font-size:.86rem;color:var(--muted)}
+.kicker{background:var(--ink);color:var(--paper);border-radius:20px;padding:40px 28px;text-align:center;box-shadow:8px 8px 0 var(--yellow)}
+.kicker .s{font-family:'Dela Gothic One';color:var(--yellow);font-size:.84rem;letter-spacing:.1em;display:block;margin-bottom:12px}
+.kicker .big{font-family:'Dela Gothic One';font-size:clamp(1rem,3.9vw,1.55rem);line-height:1.75}
+
+/* ---------- 診断3ステップ（本物の手順なので番号OK） ---------- */
+.flow{background:var(--purple);color:var(--paper)}
+.flow .eyebrow{color:var(--yellow)}
+.steps{display:grid;gap:16px}
+@media(min-width:780px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:30px 24px}
+.step .n{font-family:'Dela Gothic One';font-size:2.4rem;color:var(--yellow);line-height:1}
+.step h3{font-family:'Dela Gothic One';font-weight:400;font-size:1.1rem;margin:14px 0 8px}
+.step p{font-size:.86rem;color:rgba(251,246,236,.82)}
+.honest{margin-top:34px;text-align:center;font-family:'Dela Gothic One';font-size:clamp(.95rem,3.6vw,1.08rem);color:var(--yellow)}
+
+/* ---------- 実例 ---------- */
+.cases .h2{margin-bottom:34px}
+.case-grid{display:grid;gap:18px}
+@media(min-width:820px){.case-grid{grid-template-columns:repeat(3,1fr)}}
+.case{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:26px 22px;box-shadow:5px 5px 0 var(--ink)}
+.case .who{font-family:'Dela Gothic One';font-weight:400;font-size:1.02rem}
+.case .who small{display:block;font-family:'Noto Sans JP';font-weight:700;font-size:.76rem;color:var(--purple);margin-top:2px}
+.ba{margin:18px 0;padding:16px;background:var(--paper);border-radius:12px;text-align:center}
+.ba .lab{font-size:.7rem;letter-spacing:.12em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.ba .num{font-family:'Dela Gothic One';display:flex;align-items:baseline;justify-content:center;gap:8px}
+.ba .bf{font-size:1rem;color:#b3a9c4;text-decoration:line-through}
+.ba .af{font-size:1.9rem;color:var(--purple)}
+.ba .af small{font-size:.5em}
+.ba .arr{color:var(--yellow);-webkit-text-stroke:1px var(--purple)}
+.ba.alt .af{font-size:1.1rem;line-height:1.4}
+.tag{display:inline-block;margin-top:10px;background:var(--yellow);color:var(--ink);font-family:'Dela Gothic One';font-size:.72rem;padding:4px 12px;border-radius:99px}
+.case .story{font-size:.84rem;color:var(--muted);margin-top:6px}
+.disc{text-align:center;font-size:.74rem;color:var(--muted);margin-top:24px}
+
+/* ---------- 約束 ---------- */
+.promise{background:var(--ink);color:var(--paper)}
+.promise .eyebrow{color:var(--yellow)}
+.plist{display:grid;gap:16px}
+@media(min-width:780px){.plist{grid-template-columns:repeat(3,1fr)}}
+.p{border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:28px 24px}
+.p h3{font-family:'Dela Gothic One';font-weight:400;color:var(--yellow);font-size:1.06rem;line-height:1.5;margin-bottom:10px}
+.p p{font-size:.86rem;color:rgba(251,246,236,.8)}
+
+/* ---------- 最終CTA（黄の塊で締める） ---------- */
+.final{background:var(--yellow);color:var(--ink);text-align:center}
+.final .free{display:inline-block;background:var(--ink);color:var(--yellow);font-family:'Dela Gothic One';font-size:.78rem;padding:7px 18px;border-radius:99px;margin-bottom:22px}
+.final h2{font-family:'Dela Gothic One';font-weight:400;font-size:clamp(1.15rem,4.6vw,2.1rem);line-height:1.6;margin-bottom:30px}
+.final .btn{background:var(--ink);color:var(--yellow);box-shadow:5px 5px 0 rgba(36,16,72,.35)}
+.final .btn .free{background:var(--yellow);color:var(--ink)}
+.final .note{color:rgba(36,16,72,.65)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(251,246,236,.6);font-size:.78rem;padding:46px 0 120px;line-height:2.1}
+footer .fb{font-family:'Dela Gothic One';color:var(--paper);font-size:1.05rem;margin-bottom:12px}
+footer a{color:var(--yellow)}
+@media(min-width:768px){footer{padding-bottom:46px}}
+
+/* ---------- sticky ---------- */
+.sticky{position:fixed;left:14px;right:14px;bottom:14px;z-index:50;transform:translateY(140%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;justify-content:center;font-size:.95rem}
+@media(min-width:768px){.sticky{display:none}}
+
+/* ---------- ロゴ画像・写真 ---------- */
+.logomark{height:34px;width:auto;border-radius:8px;display:block}
+.hero-photo{margin-top:32px;max-width:430px;border:5px solid var(--paper);border-radius:16px;box-shadow:7px 7px 0 var(--yellow);overflow:hidden;transform:rotate(-1.2deg);background:var(--purple)}
+.hero-photo img{width:100%;height:240px;object-fit:cover;display:block}
+.who-row{display:flex;align-items:center;gap:14px;margin-bottom:4px}
+.ava{width:58px;height:58px;border-radius:50%;overflow:hidden;flex:0 0 58px;background:var(--purple);border:3px solid var(--yellow);display:grid;place-items:center;color:var(--yellow);font-family:'Dela Gothic One';font-size:1.1rem}
+.ava img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- motion（控えめ） ---------- */
+.up{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.up.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.up{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"><picture><source media="(max-width:760px)" srcset="img/hero-mobile.jpg"><img src="img/hero.jpg" alt=""></picture></div>
+  <div class="hero-shade"></div>
+  <div class="wrap">
+    <div class="top">
+      <span class="logo"><img class="logomark" src="img/logo.png" alt="ハマリバ" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'b',textContent:'ハ'}))">ハマリバ</span>
+    </div>
+    <h1 class="disp up in">
+      <span class="sm">学歴も職歴も、関係ない。</span>
+      あなたが<br><span class="fit">ハマる</span>仕事へ。
+    </h1>
+    <p class="lead up in">「このままで終わりたくない」20代へ。<br>3分の診断で、自分に向いてる仕事がわかる。</p>
+    <div class="row up in">
+      <span>診断3分</span><span>完全無料</span><span>未経験OK</span>
+    </div>
+    <div class="ctarow up in">
+      <a class="btn" href="https://lin.ee/zId5HBI">3分の適職診断を受ける<span class="free">無料</span></a>
+      <p class="note" style="color:rgba(251,246,236,.7)">※求職者の方は完全無料です（公式LINEから）</p>
+    </div>
+  </div>
+</header>
+
+<!-- 共感 -->
+<section class="empathy">
+  <div class="wrap tight">
+    <div class="eyebrow up">こんな気持ち、ない？</div>
+    <h2 class="h2 disp up">ひとつでも当てはまったら、<br>読み進めてみて。</h2>
+    <div class="worries up">
+      <div class="worry"><span class="no">01</span><div class="tx"><b>頑張ってるのに報われない</b><p>評価も給料も、ずっと横ばい。努力の置き場所が分からない。</p></div></div>
+      <div class="worry"><span class="no">02</span><div class="tx"><b>学歴・職歴に自信がない</b><p>履歴書を書くたびに、ちょっと気が重くなる。</p></div></div>
+      <div class="worry"><span class="no">03</span><div class="tx"><b>このままでいいのか不安</b><p>5年後の自分が想像できない。モヤモヤが消えない。</p></div></div>
+      <div class="worry"><span class="no">04</span><div class="tx"><b>何が向いてるか分からない</b><p>やりたいことが見つからないまま、時間だけが過ぎる。</p></div></div>
+    </div>
+    <div class="kicker up">
+      <span class="s">だいじょうぶ。</span>
+      <span class="big">それ、あなたがダメなんじゃない。<br>まだ<span style="color:var(--yellow)">“ハマる場所”</span>に出会ってないだけ。</span>
+    </div>
+  </div>
+</section>
+
+<!-- 診断3ステップ -->
+<section class="flow">
+  <div class="wrap">
+    <div class="eyebrow up">HOW IT WORKS</div>
+    <h2 class="h2 disp up">3分で、向いてる仕事がわかる</h2>
+    <div class="steps">
+      <div class="step up"><div class="n">01</div><h3>公式LINEを追加</h3><p>追加は無料。しつこい連絡はしません。</p></div>
+      <div class="step up"><div class="n">02</div><h3>質問に答えるだけ</h3><p>3分・スマホ完結。直感でOK。</p></div>
+      <div class="step up"><div class="n">03</div><h3>“ハマる”タイプ判明</h3><p>あなたの向いてる仕事がわかる。</p></div>
+    </div>
+    <p class="honest up">あなたに向いてる仕事、ごまかさず正直に出します。</p>
+  </div>
+</section>
+
+<!-- 実例 -->
+<section class="cases">
+  <div class="wrap">
+    <div class="eyebrow up">VOICE</div>
+    <h2 class="h2 disp up">環境が変わって、<br>人生が動いた20代。</h2>
+    <div class="case-grid">
+      <div class="case up">
+        <div class="who-row"><div class="ava"><img src="img/case-d.jpg" alt="" onerror="this.parentNode.textContent='D'"></div><p class="who">D太さん<small>24歳・元Bar店員</small></p></div>
+        <div class="ba"><div class="lab">年収</div><div class="num"><span class="bf">400万</span><span class="arr">▶</span><span class="af">600<small>万</small></span></div><span class="tag">正社員へ</span></div>
+        <p class="story">夜の仕事から、未経験で反響営業へ。収入も生活も、まるごと変わった。</p>
+      </div>
+      <div class="case up">
+        <div class="who-row"><div class="ava"><img src="img/case-e.jpg" alt="" onerror="this.parentNode.textContent='E'"></div><p class="who">E子さん<small>28歳・派遣を転々</small></p></div>
+        <div class="ba"><div class="lab">年収</div><div class="num"><span class="bf">200万</span><span class="arr">▶</span><span class="af">500<small>万</small></span></div><span class="tag">初の正社員</span></div>
+        <p class="story">「職歴に自信がない」から一歩。未経験で営業に挑戦して、初めての正社員に。</p>
+      </div>
+      <div class="case up">
+        <div class="who-row"><div class="ava"><img src="img/case-b.jpg" alt="" onerror="this.parentNode.textContent='B'"></div><p class="who">B子さん<small>30歳・元看護師</small></p></div>
+        <div class="ba alt"><div class="lab">キャリアチェンジ</div><div class="num"><span class="af">年収を下げず<br>上場企業へ</span></div><span class="tag">営業事務・正社員</span></div>
+        <p class="story">体を大事にしながら働きたい。未経験で営業事務へキャリアチェンジ。</p>
+      </div>
+    </div>
+    <p class="disc">※個人の実績です。成果には個人差があります。</p>
+  </div>
+</section>
+
+<!-- 約束 -->
+<section class="promise">
+  <div class="wrap">
+    <div class="eyebrow up">PROMISE</div>
+    <h2 class="h2 disp up">ハマリバの約束</h2>
+    <div class="plist">
+      <div class="p up"><h3>甘やかさない。<br>でも、見捨てない。</h3><p>言いにくいことも、あなたのために言う。最後まで一緒に考える。</p></div>
+      <div class="p up"><h3>“ハマる”場所を、<br>本気で考える。</h3><p>とりあえず紹介、はしない。その人に合う環境を一人ひとり本気で。</p></div>
+      <div class="p up"><h3>人は、環境で変わる。</h3><p>うまくいかないのは能力じゃなく、環境が合ってないだけかもしれない。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTA -->
+<section class="final">
+  <div class="wrap tight">
+    <span class="free up">求職者は完全無料</span>
+    <h2 class="up">まずは3分の診断から。<br>やってみて、ダメなら閉じればいい。</h2>
+    <div class="up">
+      <a class="btn" href="https://lin.ee/zId5HBI">無料で適職診断を受ける<span class="free">LINE</span></a>
+      <p class="note">※求職者の方は完全無料です</p>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <p class="fb">ハマリバ</p>
+    <p>有料職業紹介事業 許可番号：13-ユ-318181</p>
+    <p>運営：株式会社Talenteam（東京都渋谷区渋谷2-12-4 ネクストサイトビル5階）</p>
+    <p>お問い合わせ：<a href="mailto:hamariba@talenteam.jp">hamariba@talenteam.jp</a></p>
+    <p><a href="privacy.html">プライバシーポリシー</a></p>
+    <p style="margin-top:12px;opacity:.6">&copy; 2026 Talenteam Inc.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="https://lin.ee/zId5HBI">3分の適職診断を受ける<span class="free">無料</span></a></div>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.up').forEach(el=>io.observe(el));
+const sticky=document.getElementById('sticky'),hero=document.querySelector('.hero'),final=document.querySelector('.final');
+addEventListener('scroll',()=>{const hb=hero.getBoundingClientRect().bottom,ft=final.getBoundingClientRect().top;sticky.classList.toggle('on',hb<0&&ft>innerHeight*.7)},{passive:true});
+</script>
+</body>
+</html>
